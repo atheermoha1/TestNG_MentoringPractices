@@ -23,7 +23,7 @@ Create test methods with groups: "smoke","regression","api"
         System.out.println(" Test01");
     }
 
-    @Test(priority = 3,description = "Second test",groups = "smoke")
+    @Test(priority = 3,description = "Second test",groups = {"smoke"})
     void Test02(){
         System.out.println(" Test02");
 
@@ -34,7 +34,7 @@ Create test methods with groups: "smoke","regression","api"
         System.out.println(" Test03");
     }
 
-    @Test(priority = 5,description = "the lowest priority",groups = "api")
+    @Test(priority = 5,description = "the lowest priority",groups = {"api","smoke"})
     void Test04(){
         System.out.println(" Test04");
     }
@@ -44,12 +44,13 @@ Create test methods with groups: "smoke","regression","api"
         System.out.println(" Test05");
     }
 
+
     @Test(enabled = false, description = "the test is ignored",groups = "regression")
     void Test06(){
         System.out.println(" Test06");
     }
 
-    @Test(timeOut = 3000,description = "Seventh test with TimeOut for 3 sec")
+    @Test(timeOut = 3000,description = "Seventh test with TimeOut for 3 sec",groups = "api")
     void Test07() throws InterruptedException {
         Thread.sleep(2000);
         System.out.println(" Test07");
