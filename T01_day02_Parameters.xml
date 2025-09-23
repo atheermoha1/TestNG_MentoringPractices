@@ -4,13 +4,13 @@
     <test name="JavaSearch">
         <parameter name="searchKeyword" value="java"></parameter>
         <classes>
-            <class name="com.SdaMentoring.Assignments.day02.C01_AmazonSearchTestwithParameters"> </class>
+            <class name="com.SdaMentoring.Assignments.day02.T01_AmazonSearchTestwithParameters"> </class>
         </classes>
     </test>
     <test name="SeleniumSearch">
         <parameter name="searchKeyword" value="selenium"></parameter>
         <classes>
-            <class name="com.SdaMentoring.Assignments.day02.C01_AmazonSearchTestwithParameters"> </class>
+            <class name="com.SdaMentoring.Assignments.day02.T01_AmazonSearchTestwithParameters"> </class>
         </classes>
     </test>
 </suite>
