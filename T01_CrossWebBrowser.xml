@@ -4,6 +4,12 @@
     <test verbose="2" preserve-order="true"
           name="Test Web browser 1">
         <parameter name="browser" value="Chrome"></parameter>
+        <parameter name="name" value="John"></parameter>
+        <parameter name="age" value="23"></parameter>
+        <parameter name="department" value="IT Department"></parameter>
+        <parameter name="interest" value="Design"></parameter>
+        <parameter name="gender" value="female"></parameter>
+
         <classes>
             <class name="com.SdaMentoring.Tasks.day03.T01_CrossBrowserFormTesting">
             </class>
@@ -12,7 +18,13 @@
 
     <test verbose="2" preserve-order="true"
           name="Test Web browser 2">
-        <parameter name="browser" value="Chrome"></parameter>
+        <parameter name="browser" value="Firefox"></parameter>
+        <parameter name="name" value="John"></parameter>
+        <parameter name="age" value="23"></parameter>
+        <parameter name="department" value="IT Department"></parameter>
+        <parameter name="interest" value="Design"></parameter>
+        <parameter name="gender" value="female"></parameter>
+
         <classes>
             <class name="com.SdaMentoring.Tasks.day03.T01_CrossBrowserFormTesting">
             </class>
@@ -21,7 +33,12 @@
 
     <test verbose="2" preserve-order="true"
           name="Test Web browser 3">
-        <parameter name="browser" value="Chrome"></parameter>
+        <parameter name="browser" value="Edge"></parameter>
+        <parameter name="name" value="John"></parameter>
+        <parameter name="age" value="23"></parameter>
+        <parameter name="department" value="IT Department"></parameter>
+        <parameter name="interest" value="Design"></parameter>
+        <parameter name="gender" value="female"></parameter>
         <classes>
             <class name="com.SdaMentoring.Tasks.day03.T01_CrossBrowserFormTesting">
             </class>
