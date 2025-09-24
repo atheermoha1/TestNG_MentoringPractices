@@ -4,10 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.awt.*;
 import java.time.Duration;
@@ -29,7 +26,7 @@ WebDriver driver;
     }
     @Test
     @Parameters("searchKeyword")
-    void Test01(String keyword) throws AWTException {
+    void Test01(@Optional ("java") String keyword) {
         //Navigate to: https://www.amazon.com
         driver.get("https://www.amazon.com/ref=nav_logo");
 
