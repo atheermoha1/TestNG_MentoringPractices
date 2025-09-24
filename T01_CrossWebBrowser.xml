@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="Test Web browser 1">
+        <parameter name="browser" value="Chrome"></parameter>
+        <classes>
+            <class name="com.SdaMentoring.Tasks.day03.T01_CrossBrowserFormTesting">
+            </class>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true"
+          name="Test Web browser 2">
+        <parameter name="browser" value="Chrome"></parameter>
+        <classes>
+            <class name="com.SdaMentoring.Tasks.day03.T01_CrossBrowserFormTesting">
+            </class>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true"
+          name="Test Web browser 3">
+        <parameter name="browser" value="Chrome"></parameter>
+        <classes>
+            <class name="com.SdaMentoring.Tasks.day03.T01_CrossBrowserFormTesting">
+            </class>
+        </classes>
+    </test>
+</suite>

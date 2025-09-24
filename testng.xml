@@ -1,0 +1,12 @@
+<suite name="SmokeTestSuite">
+    <test name="SmokeTests">
+        <groups>
+            <run>
+                <include name="smoke"></include>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.SdaMentoring.Tasks.day01"></package>
+        </packages>
+    </test>
+</suite>
