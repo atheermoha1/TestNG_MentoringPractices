@@ -34,7 +34,7 @@ Do negative test with all scenarios
         Thread.sleep(2000);
 
         try {
-            //assert that alert appears for incorrect input accept the alert
+            //assert that alert appears for incorrect input
             Alert alert = driver.switchTo().alert();
             String text = alert.getText();
             Assert.assertEquals(text, "Incorrect username or password");
@@ -46,6 +46,7 @@ Do negative test with all scenarios
             String validationMessage = (String) js.executeScript("return arguments[0].validationMessage;", usernameField);
             WebElement passField = driver.findElement(By.id("password"));
             String validationMessage2 = (String) js.executeScript("return arguments[0].validationMessage;", passField);
+            //I tried to handle it with .getText() but it didn't work,then after I search > getAttribute("value") read what is typed
             if(usernameField.getAttribute("value").isEmpty()){
                 System.out.println("validationMessage = " + validationMessage);
                 Assert.assertEquals(validationMessage, "Please fill out this field.");
