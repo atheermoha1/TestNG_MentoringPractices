@@ -33,19 +33,26 @@ Do negative test with all scenarios
         driver.findElement(By.xpath("//input[@type='submit']")).click();
         Thread.sleep(2000);
 
-        //assert the empty fields>>> I faced errors on it and I do not know how to handle it
-      //  JavascriptExecutor js = (JavascriptExecutor) driver;
-//        WebElement usernameField = driver.findElement(By.id("username"));
-//        String validationMessage = (String) js.executeScript("return arguments[0].validationMessage;", usernameField);
-//        System.out.println("validationMessage = " + validationMessage);
-//        Assert.assertEquals(validationMessage, "Please fill out this field.");
-//
+        try {
+            //assert that alert appears for incorrect input accept the alert
+            Alert alert = driver.switchTo().alert();
+            String text = alert.getText();
+            Assert.assertEquals(text, "Incorrect username or password");
+            alert.accept();
+        }catch(NoAlertPresentException e) {
+            //assert the empty fields
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            WebElement usernameField = driver.findElement(By.id("username"));
+            String validationMessage = (String) js.executeScript("return arguments[0].validationMessage;", usernameField);
+            WebElement passField = driver.findElement(By.id("password"));
+            String validationMessage2 = (String) js.executeScript("return arguments[0].validationMessage;", passField);
+            if(usernameField.getAttribute("value").isEmpty()){
+                System.out.println("validationMessage = " + validationMessage);
+                Assert.assertEquals(validationMessage, "Please fill out this field.");
+            }else{
+                Assert.assertEquals(validationMessage2, "Please fill out this field.");
 
-        //assert that alert appears for incorrect input accept the alert
-        Alert alert= driver.switchTo().alert();
-        String text=alert.getText();
-        Assert.assertEquals(text,"Incorrect username or password");
-        alert.accept();
-
+            }
+        }
 }
     }
