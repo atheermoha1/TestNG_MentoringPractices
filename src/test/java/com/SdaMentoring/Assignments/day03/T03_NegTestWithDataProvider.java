@@ -4,7 +4,7 @@ import org.openqa.selenium.*;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import utilities.TestBase;
+import com.SdaMentoring.utilities.TestBase;
 
 public class T03_NegTestWithDataProvider extends TestBase {
 /*

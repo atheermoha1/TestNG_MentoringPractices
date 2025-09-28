@@ -1,5 +1,6 @@
 package com.SdaMentoring.Tasks.day03;
 
+import com.SdaMentoring.utilities.DataProviderUtilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -32,7 +33,7 @@ public class T02AdditionalTask {
         driver.get("https://claruswaysda.github.io/addRecordWebTable.html");
 
     }
-    @Test(dataProvider = "getData03",dataProviderClass = utilities.DataProviderUtilities.class)
+    @Test(dataProvider = "getData03",dataProviderClass = DataProviderUtilities.class)
     public void dataProviderTest03(String name, double age, String visibleText) {
         driver.findElement(By.id("nameInput")).sendKeys(name);
         driver.findElement(By.id("ageInput")).sendKeys((int) age + "");

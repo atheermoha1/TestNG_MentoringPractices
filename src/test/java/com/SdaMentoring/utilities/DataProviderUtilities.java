@@ -1,4 +1,4 @@
-package utilities;
+package com.SdaMentoring.utilities;
 
 import com.github.javafaker.Faker;
 import org.testng.annotations.DataProvider;

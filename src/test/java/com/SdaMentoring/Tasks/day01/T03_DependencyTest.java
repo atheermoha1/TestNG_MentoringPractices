@@ -1,7 +1,7 @@
 package com.SdaMentoring.Tasks.day01;
 
 import org.testng.annotations.Test;
-import utilities.TestBase;
+import com.SdaMentoring.utilities.TestBase;
 
 public class T03_DependencyTest extends TestBase{
     /*

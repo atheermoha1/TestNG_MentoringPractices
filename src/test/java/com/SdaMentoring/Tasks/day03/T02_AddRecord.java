@@ -1,10 +1,11 @@
 package com.SdaMentoring.Tasks.day03;
 
+import com.SdaMentoring.utilities.DataProviderUtilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import utilities.TestBase;
+import com.SdaMentoring.utilities.TestBase;
 
 public class T02_AddRecord extends TestBase {
 /*
@@ -33,7 +34,7 @@ Do it with all 3 ways
 
         }
 
-        @Test(dataProvider = "getData02",dataProviderClass = utilities.DataProviderUtilities.class)
+        @Test(dataProvider = "getData02",dataProviderClass = DataProviderUtilities.class)
         public void dataProviderTest02(String name, String age, String visibleText) {
             driver.get("https://claruswaysda.github.io/addRecordWebTable.html");
             driver.findElement(By.id("nameInput")).sendKeys(name);
@@ -42,7 +43,7 @@ Do it with all 3 ways
             driver.findElement(By.xpath("//*[.='Add Record']")).click();
         }
 
-        @Test(dataProvider = "getData03",dataProviderClass = utilities.DataProviderUtilities.class)
+        @Test(dataProvider = "getData03",dataProviderClass = DataProviderUtilities.class)
         public void dataProviderTest03(String name, double age, String visibleText) {
             driver.get("https://claruswaysda.github.io/addRecordWebTable.html");
             driver.findElement(By.id("nameInput")).sendKeys(name);

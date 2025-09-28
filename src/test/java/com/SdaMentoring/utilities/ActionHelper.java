@@ -1,4 +1,4 @@
-package utilities;
+package com.SdaMentoring.utilities;
 
 
 import org.openqa.selenium.*;
