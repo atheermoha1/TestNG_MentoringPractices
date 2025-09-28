@@ -3,7 +3,6 @@ package com.SdaMentoring.Tasks.day04;
 import com.SdaMentoring.Tasks.day04.pages.ActionsFormPage;
 import com.SdaMentoring.utilities.ConfigReader;
 import com.SdaMentoring.utilities.Driver;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class T02_FormAction {
