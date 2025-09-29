@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" data-provider-thread-count="2" parallel="tests">
+<suite name="All Test Suite" data-provider-thread-count="2">
     <test verbose="2" preserve-order="true" name="ParallelDataPtovider">
 <classes>
-    <class name="com.SdaMentoring.Tasks.day05.T02_DataProviderParallelExecution"></class>
+    <class name="com.SdaMentoring.Tasks.day05.T02_DataProviderParallelExecution">
+        <methods>
+            <include name="searchWords"/>
+        </methods>
+    </class>
 
 </classes>
     </test>

@@ -7,23 +7,24 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class T02_DataProviderParallelExecution {
-    @Test(dataProvider = "DataProvider")
+
+
+    @Test(dataProvider = "DataProviderMethod")
     public void searchWords(String searchWord ) {
         //navigate to
         //https://www.amazon.sa
         Driver.getDriver().get("https://www.amazon.sa");
-        // write in search box
+        // write in the search box
         Driver.getDriver().findElement(By.id("twotabsearchtextbox")).sendKeys(searchWord);
         Driver.getDriver().findElement(By.id("nav-search-submit-button")).click();
-
         //assert
         Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//span[@class='a-color-state a-text-bold']")).getText().replace("\"","").trim().equalsIgnoreCase(searchWord),"The result does not contains the keyword");
-
+        Driver.closeDriver();
     }
 
     // By default, parallel = false. To enable parallel execution, specify parallel = true
     @DataProvider(parallel = true)
-    public Object[][] DataProvider() {
+    public Object[][] DataProviderMethod() {
         Object search[][] = {
                 {"tote bag"},
                 {"coffee mug"},
