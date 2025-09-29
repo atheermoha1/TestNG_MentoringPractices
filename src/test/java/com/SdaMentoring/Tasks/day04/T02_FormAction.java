@@ -2,7 +2,7 @@ package com.SdaMentoring.Tasks.day04;
 
 import com.SdaMentoring.Tasks.day04.pages.ActionsFormPage;
 import com.SdaMentoring.utilities.ConfigReader;
-import com.SdaMentoring.utilities.Driver;
+import com.SdaMentoring.utilities.DriverSingleton;
 import org.testng.annotations.Test;
 
 public class T02_FormAction {
@@ -13,7 +13,7 @@ Do all actions and assert
 */
     @Test
     void getDriverTest() {
-        Driver.getDriver().get(ConfigReader.getProperty("form_url"));
+        DriverSingleton.getDriver().get(ConfigReader.getProperty("form_url"));
 
         ActionsFormPage actionsFormPage =new ActionsFormPage();
 
@@ -25,6 +25,6 @@ Do all actions and assert
                 .generatePasscode()
                 .SwitchAlert();
 
-        Driver.closeDriver();
+        DriverSingleton.closeDriver();
     }
 }

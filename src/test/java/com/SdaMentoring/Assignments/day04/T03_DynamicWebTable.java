@@ -2,10 +2,8 @@ package com.SdaMentoring.Assignments.day04;
 
 
 import com.SdaMentoring.Assignments.day04.pages.FluentWebTablePage;
-import com.SdaMentoring.Tasks.day04.pages.ClaruswaySDAPage;
 import com.SdaMentoring.utilities.ConfigReader;
-import com.SdaMentoring.utilities.Driver;
-import org.openqa.selenium.support.ui.Select;
+import com.SdaMentoring.utilities.DriverSingleton;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -27,7 +25,7 @@ public class T03_DynamicWebTable {
     @Test(dataProvider="addRecords")
     void getDriverTest(String name, String age, int countryIndex) {
 
-        Driver.getDriver().get(ConfigReader.getProperty("addRecord_url2"));
+        DriverSingleton.getDriver().get(ConfigReader.getProperty("addRecord_url2"));
         FluentWebTablePage fluentWebTablePage = new FluentWebTablePage();
 
 
@@ -40,7 +38,7 @@ public class T03_DynamicWebTable {
          Assert.assertTrue(fluentWebTablePage.isRecordAdded(name));
 
 
-            Driver.closeDriver();
+            DriverSingleton.closeDriver();
         }
     }
 

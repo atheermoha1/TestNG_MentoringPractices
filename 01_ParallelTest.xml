@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="methods" thread-count="3">
+    <test verbose="2" preserve-order="true" name="First Parallel test">
+        <classes>
+            <class name="com.SdaMentoring.Tasks.day05.T01_ParallelTestConfiguration"></class>
+        </classes>
+    </test>
+</suite>

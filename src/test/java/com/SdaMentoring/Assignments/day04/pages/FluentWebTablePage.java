@@ -1,7 +1,6 @@
 package com.SdaMentoring.Assignments.day04.pages;
 
-import com.SdaMentoring.utilities.Driver;
-import com.github.javafaker.Faker;
+import com.SdaMentoring.utilities.DriverSingleton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -17,27 +16,27 @@ public class FluentWebTablePage {
 
 
     public FluentWebTablePage enterName(String name){
-        Driver.getDriver().findElement(nameInput).sendKeys(name);
+        DriverSingleton.getDriver().findElement(nameInput).sendKeys(name);
         return this;
     }
 
     public FluentWebTablePage enterAge(String age){
-        Driver.getDriver().findElement(ageInput).sendKeys(age);
+        DriverSingleton.getDriver().findElement(ageInput).sendKeys(age);
         return this;
     }
 
     public FluentWebTablePage selectCountryByvisible(int num){
-        Select select= new Select(Driver.getDriver().findElement(countrySelection));
+        Select select= new Select(DriverSingleton.getDriver().findElement(countrySelection));
         select.selectByIndex(num);
         return this;
     }
     public FluentWebTablePage addButton(){
-        Driver.getDriver().findElement(addRecButton).click();
+        DriverSingleton.getDriver().findElement(addRecButton).click();
         return this;
     }
 
    public boolean isRecordAdded(String name){
-        List<WebElement> allRows=Driver.getDriver().findElements(rows);
+        List<WebElement> allRows= DriverSingleton.getDriver().findElements(rows);
         for (WebElement row:allRows){
             if(row.findElement(By.xpath("./td[1]")).getText().equals(name)){
                 return true;

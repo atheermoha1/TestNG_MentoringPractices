@@ -3,7 +3,7 @@ package com.SdaMentoring.Tasks.day04;
 import com.SdaMentoring.Tasks.day04.pages.ClaruswaySDAPage;
 import org.testng.annotations.Test;
 import com.SdaMentoring.utilities.ConfigReader;
-import com.SdaMentoring.utilities.Driver;
+import com.SdaMentoring.utilities.DriverSingleton;
 
 public class T01_WebTableRecord {
     /*
@@ -15,13 +15,13 @@ Delete first record you created.
 
     @Test
     void getDriverTest(){
-        Driver.getDriver().get(ConfigReader.getProperty("addRecord_url"));
+        DriverSingleton.getDriver().get(ConfigReader.getProperty("addRecord_url"));
         ClaruswaySDAPage claruswaySDAPage =new ClaruswaySDAPage();
         claruswaySDAPage
                 .clickWebTable()
                 .enterFakerRecord(5)
                 .deleteLatAddedRecord();
 
-Driver.closeDriver();
+DriverSingleton.closeDriver();
     }
 }

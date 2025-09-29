@@ -1,6 +1,6 @@
 package com.SdaMentoring.Tasks.day04.pages;
 
-import com.SdaMentoring.utilities.Driver;
+import com.SdaMentoring.utilities.DriverSingleton;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -19,38 +19,38 @@ public class ActionsFormPage {
     By interest=By.xpath("//input[@value='management']");
     By gender=By.xpath("//input[@value='female']");
     By clickButton=By.xpath("//button[@onclick='generatePasscode()']");
-    WebDriverWait wait =new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+    WebDriverWait wait =new WebDriverWait(DriverSingleton.getDriver(), Duration.ofSeconds(10));
 
 
     public ActionsFormPage enterName(String name){
-        Driver.getDriver().findElement(nameInput).sendKeys(name);
+        DriverSingleton.getDriver().findElement(nameInput).sendKeys(name);
         return this;
     }
 
     public ActionsFormPage enterAge(String age){
-        Driver.getDriver().findElement(ageInput).sendKeys(age);
+        DriverSingleton.getDriver().findElement(ageInput).sendKeys(age);
         return this;
     }
 
     public ActionsFormPage department(){
-        Driver.getDriver().findElement(departement).click();
-        Select select =new Select(Driver.getDriver().findElement(departement));
+        DriverSingleton.getDriver().findElement(departement).click();
+        Select select =new Select(DriverSingleton.getDriver().findElement(departement));
         select.selectByIndex(2);
         return this;
     }
 
     public ActionsFormPage interest(){
-        Driver.getDriver().findElement(interest).click();
+        DriverSingleton.getDriver().findElement(interest).click();
         return this;
     }
 
     public ActionsFormPage gender(){
-        Driver.getDriver().findElement(gender).click();
+        DriverSingleton.getDriver().findElement(gender).click();
         return this;
     }
 
     public ActionsFormPage generatePasscode(){
-        Driver.getDriver().findElement(clickButton).click();
+        DriverSingleton.getDriver().findElement(clickButton).click();
         return this;
     }
 

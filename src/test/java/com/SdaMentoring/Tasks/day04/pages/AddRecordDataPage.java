@@ -4,7 +4,7 @@ import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import com.SdaMentoring.utilities.Driver;
+import com.SdaMentoring.utilities.DriverSingleton;
 
 import java.util.List;
 
@@ -18,22 +18,22 @@ public class AddRecordDataPage {
 
 
     public AddRecordDataPage enterName(String name){
-        Driver.getDriver().findElement(nameInput).sendKeys(name);
+        DriverSingleton.getDriver().findElement(nameInput).sendKeys(name);
         return this;
     }
 
     public AddRecordDataPage enterAge(String age){
-        Driver.getDriver().findElement(ageInput).sendKeys(age);
+        DriverSingleton.getDriver().findElement(ageInput).sendKeys(age);
         return this;
     }
 
     public AddRecordDataPage selectCountryByvisible(int num){
-        Select select= new Select(Driver.getDriver().findElement(countrySelection));
+        Select select= new Select(DriverSingleton.getDriver().findElement(countrySelection));
         select.selectByIndex(num);
         return this;
     }
     public AddRecordDataPage addButton(){
-        Driver.getDriver().findElement(addRecButton).click();
+        DriverSingleton.getDriver().findElement(addRecButton).click();
         return this;
     }
 
@@ -49,7 +49,7 @@ public class AddRecordDataPage {
     }
 
     public AddRecordDataPage deleteLatAddedRecord(){
-        List<WebElement> recordList =Driver.getDriver().findElements(addRecButton);
+        List<WebElement> recordList = DriverSingleton.getDriver().findElements(addRecButton);
         recordList.getLast().findElement(By.xpath("//button[.='Delete']"));
         return this;
     }
