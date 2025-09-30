@@ -8,7 +8,6 @@
             <include name="searchWords"/>
         </methods>
     </class>
-
 </classes>
     </test>
 </suite>
